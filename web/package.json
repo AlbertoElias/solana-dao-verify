@@ -1,0 +1,34 @@
+{
+  "name": "solana-dao-verify-web",
+  "version": "0.1.0",
+  "description": "Frontend for Solana DAO Verify Bot",
+  "author": "Alberto Elias <hi@albertoelias.me>",
+  "homepage": "https://github.com/AlbertoElias/solana-dao-verify#readme",
+  "license": "ISC",
+  "main": "src/index.js",
+  "directories": {
+    "lib": "src"
+  },
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlbertoElias/solana-dao-verify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AlbertoElias/solana-dao-verify/issues"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^2.9.2"
+  },
+  "dependencies": {
+    "@solana/wallet-adapter-wallets": "^0.16.0",
+    "bs58": "^5.0.0"
+  }
+}

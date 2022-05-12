@@ -1,0 +1,1 @@
+export const SIGNED_MESSAGE = 'Authorize Solana DAO Verify Bot to confirm your address.'
