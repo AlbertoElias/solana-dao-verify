@@ -1,0 +1,41 @@
+{
+  "name": "solana-dao-verify-bot",
+  "version": "0.1.0",
+  "description": "Discord Bot and API to verify a Solana Wallet with a Discord account",
+  "author": "Alberto Elias <hi@albertoelias.me>",
+  "homepage": "https://github.com/AlbertoElias/solana-dao-verify#readme",
+  "license": "ISC",
+  "main": "src/index.js",
+  "type": "module",
+  "directories": {
+    "lib": "src"
+  },
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlbertoElias/solana-dao-verify.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/AlbertoElias/solana-dao-verify/issues"
+  },
+  "dependencies": {
+    "@keyv/sqlite": "^3.0.1",
+    "@metaplex/js": "^4.12.0",
+    "@solana/web3.js": "^1.39.0",
+    "bs58": "^5.0.0",
+    "cors": "^2.8.5",
+    "discord.js": "^13.6.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "keyv": "^4.2.2",
+    "node-fetch": "^3.2.4",
+    "sequelize": "^6.19.0",
+    "sqlite3": "^5.0.5",
+    "tweetnacl": "^1.0.3"
+  }
+}

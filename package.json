@@ -1,0 +1,24 @@
+{
+  "name": "solana-dao-verify",
+  "version": "0.1.0",
+  "description": "A Discord bot and Frontend to check if a Discord user has a Solana wallet with a valid NFT.",
+  "main": "bot/src/index.js",
+  "type": "module",
+  "scripts": {
+    "bootstrap": "lerna link && lerna bootstrap"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "workspaces": [
+    "bot",
+    "web"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlbertoElias/solana-dao-verify.git"
+  },
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
