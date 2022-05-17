@@ -9,72 +9,74 @@
     <link rel="stylesheet" href="/style.css">
   </head>
   <body>
+    <div class="container">
     <h1 class="visually-hidden">Solana DAO Verify Bot</h1>
 
-    <div class="container">
-      <header class="d-flex flex-wrap justify-content-center py-3 mb-4">
-        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-          <span class="fs-4">Solana DAO Verify Bot</span>
-        </a>
-
-        <ul class="nav nav-pills">
-          <li class="nav-item"><a href="#" class="nav-link nav-link--home">Home</a></li>
-          <li class="nav-item"><a href="#verify" class="nav-link nav-link--verify">Verify</a></li>
-        </ul>
-
-        <div class="text-end">
-          <a class="btn btn-outline-primary me-2" href="https://github.com/AlbertoElias/solana-dao-verify" target="_blank" role="button">Github</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="#">Solana DAO Verify Bot</a>
+    
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="nav navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a href="#" class="nav-link nav-link--home">Home</a></li>
+            <li class="nav-item"><a href="#verify" class="nav-link nav-link--verify">Verify</a></li>
+            <a class="btn btn-outline-primary me-2" href="https://github.com/AlbertoElias/solana-dao-verify" target="_blank" role="button">Github</a>
+          </ul>
         </div>
-      </header>
-    </div>
+      </div>
+    </nav>
     
     <section class="home">
-      <div class="container">
-        <h2>A simple Discord bot that verifies a Discord user has a Solana wallet with a valid NFT to join your Discord server. That NFT needs to be part of a Metaplex collection that you have configured previously.</h2>
+        <h2 class="text-center">A simple Discord bot that verifies a Discord user has a Solana wallet with a valid NFT to join your Discord server. That NFT needs to be part of a Metaplex collection that you have configured previously.</h2>
 
         <div class="row">
-          <div class="col">
+          <div class="col-md-4">
             <h3>Step 1</h3>
             <p>Add the Discord Bot to your Server</p>
             <a class="btn btn-primary" role="button" href="https://discord.com/api/oauth2/authorize?client_id=956870483331145808&permissions=268503040&scope=bot">Add Bot</a>
           </div>
-          <div class="col">
+          <div class="col-md-4">
             <h3>Step 2</h3>
             <p>Configure the bot by setting up the Roles as explained in the <a href="https://github.com/AlbertoElias/solana-dao-verify/blob/master/README.md" target="_blank">Readme</a>.</p>
             <p>Make sure you have an NFT collection set up in Solana. This is explained in detail in this <a href="" target="_blank">blog post</a>.</p>
             <p>Set up the bot with <code>?setup collectionID roleID solana-network</code></p>
           </div>
-          <div class="col">
+          <div class="col-md-4">
             <h3>Step 3</h3>
             <p>Your users can now type in <code>?verify</code>.</p>
             <p>The bot will then make sure the Solana wallet they signed with has an NFT in the collection configured previously.</p>
           </div>
         </div>
-      </div>
     </section>
     
     <section class="verify">
-      <div class="container">
         <h2>Verify Your Account</h2>
         <div class="row">
-          <div class="col">
+          <div class="col-md-4">
             <h3>Step 1</h3>
             <p>Sign in with your Discord account.</p>
             <a class="discord-login btn btn-primary disabled" role="button" href="https://discord.com/api/oauth2/authorize?client_id=956870483331145808&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F%23verify&response_type=code&scope=identify">Sign In with Discord</a>
           </div>
-          <div class="col">
+          <div class="col-md-4">
             <h3>Step 2</h3>
             <p>Sign a message with Phantom for the Solana wallet you want to attach to your Discord account.</p>
             <button class="phantom-login btn btn-primary" disabled>Sign In with Phantom</button>
           </div>
-          <div class="col">
+          <div class="col-md-4">
             <h3>Step 3</h3>
             <p>Go back to the Discord server and type in <code>?verify</code>.</p>
             <p>The bot will then make sure the Solana wallet you signed with has an NFT in the collection configured by the Discord server.</p>
           </div>
         </div>
-      </div>
+        <div class="row">
+          <p class="alert alert-danger error" role="alert"></p>
+        </div>
     </section>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script type="module" src="/main.js"></script>

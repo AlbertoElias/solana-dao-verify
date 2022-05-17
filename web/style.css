@@ -10,3 +10,11 @@
 .nav {
   margin-right: 8px;
 }
+
+.error {
+  display: none;
+}
+
+.col-md-4 {
+  margin-top: 20px;
+}

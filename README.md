@@ -25,3 +25,9 @@ A simple Discord bot that verifies a Discord user has a Solana wallet with a val
 8. Afterwards, they should type `?verify` again which, if they have an NFT of the configured Metaplex collection, they will be assigned the Role you created.
   8.1 If they had already verified their account with the Bot, typing `?verify` once will be enough.
 9. Everyday, a script runs to make sure that wallet still holds a valid NFT. If not, the Role is revoked.
+
+## Running locally
+
+1. `npm i`
+2. `npm run bootstrap`
+3. Check out the server or the web!
