@@ -80,6 +80,8 @@ const init = async () => {
 
   if (!verificationInfo.code) {
     const discordLogin = document.querySelector('.discord-login')
+    const clientUrl = `${window.location.origin}/#verify`
+    discordLogin.href = `https://discord.com/api/oauth2/authorize?client_id=956870483331145808&redirect_uri=${encodeURIComponent(clientUrl)}&response_type=code&scope=identify`
     return discordLogin.classList.remove('disabled')
   }
 
