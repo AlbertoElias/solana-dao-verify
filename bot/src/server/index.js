@@ -50,6 +50,13 @@ export function setUpServer (sequelize) {
   server.use(express.urlencoded({ extended: false }))
   server.use(express.json())
 
+  server.options('/verify', (_, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*')
+    res.setHeader('Access-Control-Allow-Methods', '*')
+    res.setHeader('Access-Control-Allow-Headers', '*')
+    res.end()
+  })
+
   server.post('/verify', async (req, res) => {
     const { code, solanaAddress, signature } = req.body
     if (!code || !solanaAddress || !signature) {
@@ -68,11 +75,17 @@ export function setUpServer (sequelize) {
       return res.status(400).send('Already verified')
     }
 
-    const isSignatureValid = nacl.sign.detached.verify(
-      new TextEncoder().encode(SIGNED_MESSAGE),
-      bs58.decode(signature),
-      bs58.decode(solanaAddress)
-    )
+    let isSignatureValid = false
+
+    try {
+      isSignatureValid = nacl.sign.detached.verify(
+        new TextEncoder().encode(SIGNED_MESSAGE),
+        bs58.decode(signature),
+        bs58.decode(solanaAddress)
+      )
+    } catch (e) {
+      return res.status(400).send('Invalid Solana signature.')
+    }
 
     if (isSignatureValid) {
       try {

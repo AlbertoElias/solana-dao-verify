@@ -8,8 +8,24 @@ const verificationInfo = {}
 function getErrorMessage (error) {
   console.log(error.message)
   switch (error.message) {
+    case 'Failed to fetch':
+      return 'Failed to connect to the server.'
+    case 'Discord authorization failed.':
+      return 'Please allow the bot to check your Discord account to complete the verification.'
     case 'User rejected the request.':
       return 'You have rejected the signature on Phantom.'
+    case 'Missing required fields.':
+      return 'The verification request was not sent correctly.'
+    case 'Unsuccessful Discord authorization':
+      return 'We couldn\'t verify your Discord account.'
+    case 'Already verified':
+      return 'You have already verified your Discord account or your Solana address.'
+    case 'Error creating verification':
+      return 'There was an error creating the verification request on our server.'
+    case 'Invalid Solana signature.':
+      return 'The Solana signature made with Phantom is invalid.'
+    case 'Unkown error.':
+      return 'There was an unknown error.'
     default:
       return error.message
   }
@@ -44,6 +60,9 @@ async function sendVerificationInfo () {
     })
     if (response.status === 200) {
       return 'Verification success.'
+    } else if (response.status === 400 || response.status === 500) {
+      const error = await response.text()
+      throw error.message
     }
   } catch (e) {
     throw e
@@ -52,7 +71,12 @@ async function sendVerificationInfo () {
 
 const init = async () => {
   const params = new URLSearchParams(window.location.search)
+  const error = params.get('error')
   verificationInfo.code = params.get('code')
+
+  if (error === 'access_denied') {
+    showError(new Error('Discord authorization failed.'))
+  }
 
   if (!verificationInfo.code) {
     const discordLogin = document.querySelector('.discord-login')
@@ -74,11 +98,10 @@ const init = async () => {
       verificationInfo.solanaAddress = wallet.publicKey
       verificationInfo.signature = signature
   
-      phantomLogin.style.display = 'none'
+      phantomLogin.disabled = true
       await sendVerificationInfo()
     } catch (e) {
-      console.log(e)
-      showError(e.message)
+      showError(e || new Error('Unknown error.'))
       window.history.pushState({}, document.title, `/#verify`)
       phantomLogin.disabled = true
       const discordLogin = document.querySelector('.discord-login')
