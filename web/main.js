@@ -6,7 +6,7 @@ import { SIGNED_MESSAGE } from './src/constants.js'
 const verificationInfo = {}
 
 function getErrorMessage (error) {
-  console.log(error.message)
+  console.log(4, error.message)
   switch (error.message) {
     case 'Failed to fetch':
       return 'Failed to connect to the server.'
@@ -62,7 +62,7 @@ async function sendVerificationInfo () {
       return 'Verification success.'
     } else if (response.status === 400 || response.status === 500) {
       const error = await response.text()
-      throw error.message
+      throw new Error(error)
     }
   } catch (e) {
     throw e
