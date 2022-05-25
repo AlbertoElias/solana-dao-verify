@@ -7,8 +7,22 @@
   margin-top: 60px;
 }
 
-.nav {
-  margin-right: 8px;
+.nav .btn {
+  margin-left: 0.5rem;
+}
+
+hr {
+  margin-top: 0;
+}
+
+hr, .subtitle {
+  margin-bottom: 52px;
+}
+
+@media (min-width: 768px) {
+  hr, .subtitle {
+    margin-bottom: 88px;
+  }
 }
 
 .error {
@@ -17,4 +31,8 @@
 
 .col-md-4 {
   margin-top: 20px;
+}
+
+.col-md-4 .btn {
+  margin-bottom: 1rem;
 }

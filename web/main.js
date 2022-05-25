@@ -6,7 +6,6 @@ import { SIGNED_MESSAGE } from './src/constants.js'
 const verificationInfo = {}
 
 function getErrorMessage (error) {
-  console.log(4, error.message)
   switch (error.message) {
     case 'Failed to fetch':
       return 'Failed to connect to the server.'
