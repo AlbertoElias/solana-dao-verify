@@ -33,23 +33,22 @@
 
     <div class="container">
       <section class="home">
-          <h2 class="text-center">A simple Discord bot that verifies a user has a Solana wallet with a valid NFT to join your server.</h2>
-          <h3 class="subtitle text-center">That NFT needs to be part of a Metaplex collection that you have configured previously.</h3>
+          <h2 class="subtitle text-center">A simple Discord bot that verifies a user has a Solana wallet with a valid NFT to join your server.</h2>
 
           <div class="row">
             <div class="col-md-4">
-              <h4>Step 1</h4>
+              <h3>Step 1</h3>
               <p>Add the Discord Bot to your Server</p>
               <p>Configure the bot by setting up the Roles as explained in the <a href="https://github.com/AlbertoElias/solana-dao-verify/blob/master/README.md" target="_blank">Readme</a>.</p>
               <div class="button-check"><a class="btn btn-primary" role="button" href="https://discord.com/api/oauth2/authorize?client_id=956870483331145808&permissions=268503040&scope=bot">Add Bot</a></div>
             </div>
             <div class="col-md-4">
-              <h4>Step 2</h4>
-              <p>Make sure you have an NFT collection set up in Solana. This is explained in detail in this <a href="" target="_blank">blog post</a>.</p>
+              <h3>Step 2</h3>
+              <p>Make sure you have an NFT collection set up in Solana with Metaplex v2. This is explained in detail in this <a href="" target="_blank">blog post</a>.</p>
               <p>Set up the bot with <code class="text-warning">?setup collectionID roleID solana-network</code></p>
             </div>
             <div class="col-md-4">
-              <h4>Step 3</h4>
+              <h3>Step 3</h3>
               <p>Your users can now type in <code class="text-warning">?verify</code>.</p>
               <p>The bot will then make sure the Solana wallet they signed with has an NFT in the collection configured previously.</p>
             </div>
@@ -58,9 +57,10 @@
       
       <section class="verify">
           <h2 class="subtitle text-center">Verify Your Account</h2>
+    
           <div class="row">
             <div class="col-md-4">
-              <h4>Step 1</h4>
+              <h3>Step 1</h3>
               <p>Sign in with your Discord account.</p>
               <div class="button-check">
                 <a class="discord-login btn btn-primary disabled" role="button" href="https://discord.com/api/oauth2/authorize?client_id=956870483331145808&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F%23verify&response_type=code&scope=identify">Sign In with Discord</a>
@@ -70,7 +70,7 @@
               </div>
             </div>
             <div class="col-md-4">
-              <h4>Step 2</h4>
+              <h3>Step 2</h3>
               <p>Sign a message with Phantom for the Solana wallet you want to attach to your Discord account.</p>
               <div class="button-check">
                 <button class="phantom-login btn btn-primary" disabled>Sign In with Phantom</button>
@@ -80,7 +80,7 @@
               </div>
             </div>
             <div class="col-md-4">
-              <h4>Step 3</h4>
+              <h3>Step 3</h3>
               <p>Go back to the Discord server and type in <code class="text-warning">?verify</code>.</p>
               <p>The bot will then make sure the Solana wallet you signed with has an NFT in the collection configured by the Discord server.</p>
             </div>
