@@ -84,6 +84,10 @@ const init = async () => {
     return discordLogin.classList.remove('disabled')
   }
 
+  const phantomLoginCheck = document.querySelector('.phantom-login-check')
+  const discordLoginCheck = document.querySelector('.discord-login-check')
+  discordLoginCheck.style.display = 'block'
+
   const phantomLogin = document.querySelector('.phantom-login')
   phantomLogin.disabled = false
 
@@ -101,10 +105,13 @@ const init = async () => {
   
       phantomLogin.disabled = true
       await sendVerificationInfo()
+      phantomLoginCheck.style.display = 'block'
     } catch (e) {
       showError(e || new Error('Unknown error.'))
       window.history.pushState({}, document.title, `/#verify`)
       phantomLogin.disabled = true
+      discordLoginCheck.style.display = 'none'
+      phantomLoginCheck.style.display = 'none'
       const discordLogin = document.querySelector('.discord-login')
       return discordLogin.classList.remove('disabled')
     }

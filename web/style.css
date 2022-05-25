@@ -13,6 +13,7 @@
 
 hr {
   margin-top: 0;
+  opacity: 0.08;
 }
 
 hr, .subtitle {
@@ -33,6 +34,12 @@ hr, .subtitle {
   margin-top: 20px;
 }
 
-.col-md-4 .btn {
+.button-check {
+  display: flex;
+  align-items: center;
   margin-bottom: 1rem;
+}
+
+.check {
+  display: none;
 }

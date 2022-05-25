@@ -41,7 +41,7 @@
               <h4>Step 1</h4>
               <p>Add the Discord Bot to your Server</p>
               <p>Configure the bot by setting up the Roles as explained in the <a href="https://github.com/AlbertoElias/solana-dao-verify/blob/master/README.md" target="_blank">Readme</a>.</p>
-              <a class="btn btn-primary" role="button" href="https://discord.com/api/oauth2/authorize?client_id=956870483331145808&permissions=268503040&scope=bot">Add Bot</a>
+              <div class="button-check"><a class="btn btn-primary" role="button" href="https://discord.com/api/oauth2/authorize?client_id=956870483331145808&permissions=268503040&scope=bot">Add Bot</a></div>
             </div>
             <div class="col-md-4">
               <h4>Step 2</h4>
@@ -62,12 +62,22 @@
             <div class="col-md-4">
               <h4>Step 1</h4>
               <p>Sign in with your Discord account.</p>
-              <a class="discord-login btn btn-primary disabled" role="button" href="https://discord.com/api/oauth2/authorize?client_id=956870483331145808&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F%23verify&response_type=code&scope=identify">Sign In with Discord</a>
+              <div class="button-check">
+                <a class="discord-login btn btn-primary disabled" role="button" href="https://discord.com/api/oauth2/authorize?client_id=956870483331145808&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F%23verify&response_type=code&scope=identify">Sign In with Discord</a>
+                <svg class="check discord-login-check" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#28a745" viewBox="0 0 16 16">
+                  <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                </svg>
+              </div>
             </div>
             <div class="col-md-4">
               <h4>Step 2</h4>
               <p>Sign a message with Phantom for the Solana wallet you want to attach to your Discord account.</p>
-              <button class="phantom-login btn btn-primary" disabled>Sign In with Phantom</button>
+              <div class="button-check">
+                <button class="phantom-login btn btn-primary" disabled>Sign In with Phantom</button>
+                <svg class="check phantom-login-check" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#28a745" viewBox="0 0 16 16">
+                  <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                </svg>
+              </div>
             </div>
             <div class="col-md-4">
               <h4>Step 3</h4>
