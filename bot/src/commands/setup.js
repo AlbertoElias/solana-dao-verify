@@ -4,7 +4,6 @@ import { Connection, programs } from '@metaplex/js'
 const { metadata: { Metadata } } = programs
 
 import { getServersModel } from '../models/index.js'
-import { getBot } from '../bot/index.js'
 
 export default {
     name: '?setup',
@@ -29,6 +28,7 @@ export default {
       const role = msg.guild.roles.cache.find(role => role.id === verifiedRole)
       if (!role) {
         msg.reply('Please provide a valid verified role.')
+        return
       }
 
 
