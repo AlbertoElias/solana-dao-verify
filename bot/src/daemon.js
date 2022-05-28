@@ -16,7 +16,7 @@ const Users = getUsersModel(sequelize)
 const Servers = getServersModel(sequelize)
 const Verifications = getVerificationsModel(sequelize)
 
-cron.schedule('* * * * *', () => {
+cron.schedule('0 0 * * *', () => {
   const bot = new Client({
     intents: [
       Intents.FLAGS.GUILDS,
